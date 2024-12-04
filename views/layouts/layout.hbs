@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="TravelPlannerApp - Organize and manage your trips with ease.">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/app.js"></script>
+    
+    <title>{{#if title}}Travel Planner - {{title}}{{else}}Travel Planner{{/if}}</title>
+  </head>
+  <body>
+    {{> header}} <!-- Include the header partial -->
+
+    <main role="main" class="container mt-5">
+      <div class="row">
+        <div class="col-md-8">
+          {{{body}}}
+        </div>
+        <div class="col-md-4">
+          <section class="content-section">
+            <h3>About Travel Planner</h3>
+            <p>TravelPlannerApp helps you organize your trips, create itineraries, and keep track of important details all in one place.</p>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light">Custom Itineraries</li>
+              <li class="list-group-item list-group-item-light">Activity Planning</li>
+              <li class="list-group-item list-group-item-light">Weather Integration</li>
+              <li class="list-group-item list-group-item-light">Notes and Reminders</li>
+            </ul>
+            <p class="text-muted mt-2">Plan smarter and travel stress-free!</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    {{> footer}} <!-- Include the footer partial -->
+
+    <!-- Bootstrap JS and dependencies -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

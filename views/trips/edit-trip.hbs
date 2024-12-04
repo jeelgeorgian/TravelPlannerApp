@@ -1,0 +1,32 @@
+{{#if user}}
+  <div class="container mt-5">
+    <h1>Edit Trip</h1>
+    
+    {{#if error}}
+      <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+    <form action="/trips/edit-trip/{{trip._id}}" method="POST">
+      <div class="form-group">
+        <label for="tripName">Trip Name</label>
+        <input type="text" class="form-control" id="tripName" name="trip_name" value="{{trip.tripName}}" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <input type="text" class="form-control" id="destination" name="destination" value="{{trip.destination}}" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="tripDate">Trip Date</label>
+        <input type="date" class="form-control" id="tripDate" name="trip_date" value="{{tripDate}}" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Update Trip</button>
+    </form>
+  </div>
+{{else}}
+  <div class="container mt-5">
+    <p>Please <a href="/users/login">log in</a> to edit your trip.</p>
+  </div>
+{{/if}}

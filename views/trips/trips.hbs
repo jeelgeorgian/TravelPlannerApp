@@ -1,0 +1,44 @@
+{{#if user}}
+  <div class="all-trips">
+    <h1 class="mb-4">Welcome, {{user}}! Here are all trips:</h1>
+
+    {{#if trips.length}}
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Trip Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Trip Date</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each trips}}
+            <tr>
+              <td>{{this.tripName}}</td>
+              <td>{{this.destination}}</td>
+              <td>{{this.tripDate}}</td>
+              <td>
+                <!-- Edit Button -->
+                <a href="/trips/edit-trip/{{this._id}}" class="btn btn-warning">Edit</a>
+                
+                <!-- Delete Button -->
+                <form action="/trips/delete-trip/{{this._id}}" method="POST" style="display:inline;">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <div class="alert alert-info">
+        You haven't added any trips yet. <a href="/">Add a new trip!</a>
+      </div>
+    {{/if}}
+  </div>
+{{else}}
+  <div class="container mt-5">
+    <p>Please <a href="/users/login">log in</a> to view your trips.</p>
+  </div>
+{{/if}}
